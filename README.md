@@ -39,6 +39,5 @@ proyecto-challenge-amigo-secreto/
 ## Créditos
 
 Desarrollado por [rflimat](https://github.com/rflimat) como parte del Challenge de Alura Latam.  
----
 
 ¡Diviértete organizando tu Amigo Secreto!
