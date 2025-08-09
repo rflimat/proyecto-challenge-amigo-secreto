@@ -20,6 +20,7 @@ proyecto-challenge-amigo-secreto/
 ├── assets/             # Imágenes utilizadas en la interfaz
 │   ├── amigo-secreto.png
 │   └── play_circle_outline.png
+|   └── reset.png
 └── README.md           # Documentación del proyecto
 ```
 
