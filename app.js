@@ -56,3 +56,12 @@ function generarIndiceAleatorio() {
 
     return generarIndiceAleatorio();
 }
+
+// Función para reiniciar el sorteo
+function reiniciarSorteo() {
+    amigos = [];
+    indiceSorteado = null;
+    document.querySelector("#listaAmigos").innerHTML = "";
+    document.querySelector("#resultado").innerHTML = "";
+    document.querySelector("#amigo").value = "";
+}
