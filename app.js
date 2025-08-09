@@ -13,6 +13,17 @@ function agregarAmigo() {
     }
 
     document.querySelector("#amigo").value = "";
-    
-    // actualizarListaAmigos();
+
+    actualizarListaAmigos();
+}
+
+function actualizarListaAmigos() {
+    let lista = document.querySelector("#listaAmigos");
+    lista.innerHTML = "";
+
+    for (let amigo of amigos) {
+        let li = document.createElement("li");
+        li.textContent = amigo;
+        lista.appendChild(li);
+    }
 }
