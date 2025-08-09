@@ -1,6 +1,8 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
+let indiceSorteado = null;
 
+// Función para agregar un amigo a la lista
 function agregarAmigo() {
     let nombre = document.querySelector("#amigo").value;
     
@@ -12,11 +14,13 @@ function agregarAmigo() {
         amigos.push(nombre);
     }
 
+    // Limpiar el campo de entrada después de agregar el amigo
     document.querySelector("#amigo").value = "";
 
     actualizarListaAmigos();
 }
 
+// Función para listar amigos en la interfaz
 function actualizarListaAmigos() {
     let lista = document.querySelector("#listaAmigos");
     lista.innerHTML = "";
@@ -26,4 +30,29 @@ function actualizarListaAmigos() {
         li.textContent = amigo;
         lista.appendChild(li);
     }
+}
+
+// Función para sortear un amigo secreto
+function sortearAmigo() {
+    if (amigos.length <= 0) {
+        alert("Por favor, agregue al menos un amigo.");
+        return;
+    }
+
+    let indiceAleatorio = generarIndiceAleatorio();
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    document.querySelector("#resultado").innerHTML = `El amigo secreto sorteado es: <strong>${amigoSorteado}</strong>`;
+}
+
+// Función para generar un índice aleatorio que no se repita solo entre un sorteo y el siguiente sorteo
+function generarIndiceAleatorio() {
+    let numeroAleatorio = Math.floor(Math.random() * amigos.length);
+
+    if (indiceSorteado !== numeroAleatorio) {
+        indiceSorteado = numeroAleatorio;
+        return numeroAleatorio;
+    }
+
+    return generarIndiceAleatorio();
 }
